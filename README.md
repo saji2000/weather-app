@@ -27,3 +27,13 @@ Follow these steps to get your development environment running:
    ```bash
    git clone [repository URL]
    ```
+2. **Navigate to the project directory:**
+
+   ```bash
+    cd city-weather-dashboard
+   ```
+
+3. **Install dependencies:**
+   ```bash
+    npm install
+   ```
