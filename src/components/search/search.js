@@ -5,36 +5,24 @@ import { GEO_API_URL, geoApiOptions } from "../../api";
 const Search = ({ onSearchChange }) => {
   const [search, setSearch] = useState(null);
 
-  useEffect(() => {
-    console.log(GEO_API_URL, geoApiOptions);
-  });
+  const loadOptions = async (inputValue) => {
+    try {
+      const response = await fetch(
+        `${GEO_API_URL}?minPopulation=100000&namePrefix=${inputValue}&limit=10`,
+        geoApiOptions
+      );
+      const json = await response.json(); // Parse the response as JSON
 
-  const loadOptions = (inputValue) => {
-    return fetch(
-      `${GEO_API_URL}/cities?minPopulation=100000&namePrefix=${inputValue}`,
-      geoApiOptions
-    )
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((json) => {
-        if (!json.data) {
-          throw new Error("Response JSON did not contain data property");
-        }
-        return {
-          options: json.data.map((city) => ({
-            value: `${city.latitude} ${city.longitude}`,
-            label: `${city.name}, ${city.countryCode}`,
-          })),
-        };
-      })
-      .catch((err) => {
-        console.error(err);
-        return { options: [] };
-      });
+      const options = json.data.map((city) => ({
+        label: city.name,
+        value: city.geonameId,
+      }));
+
+      return { options }; // Return an object with an "options" property
+    } catch (error) {
+      console.error(error);
+      return { options: [] }; // Return an empty options array on error
+    }
   };
 
   const handleOnChange = (searchData) => {
