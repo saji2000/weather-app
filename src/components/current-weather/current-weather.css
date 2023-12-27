@@ -8,7 +8,7 @@
     padding: 0 20px 10px 20px;
 }
 
-.top {
+.top, .bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,4 +30,39 @@
 
 .weather-icon {
     width: 100px;
+}
+
+.temperature {
+    font-weight: 600;
+    font-size: 60px;
+    width: auto;
+    letter-spacing: -5px;
+    margin: 10px 0;
+}
+
+.details {
+    width: 100%;
+    padding-left: 20px;
+}
+
+.paramater-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.paramater-label {
+    margin-top: 6px;
+    text-align: left;
+    font-weight: 400;
+    font-size: 14px
+}
+
+.paramater-value {
+    text-align: right;
+    font-weight: 500;
+    font-size: 18px
+}
+
+.paramater-label.top{
+    border-bottom: 2px solid white;
 }

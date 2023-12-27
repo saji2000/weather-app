@@ -11,10 +11,10 @@ const CurrentWeather = () => {
         <img alt="weather" className="weather-icon" src="icons/01d.png" />
       </div>
       <div className="bottom">
-        <p className="temperature">18 °C</p>
+        <p className="temperature">18°C</p>
         <div className="details">
           <div className="paramater-row">
-            <span className="paramater-label">Details</span>
+            <span className="paramater-label top">Details</span>
           </div>
           <div className="paramater-row">
             <span className="paramater-label">Feels like</span>
