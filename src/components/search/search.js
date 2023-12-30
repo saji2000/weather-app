@@ -18,8 +18,8 @@ const Search = ({ onSearchChange }) => {
 
       // Mapping the fetched data to a format suitable for the dropdown
       const options = json.data.map((city) => ({
-        label: city.name,
-        value: city.geonameId,
+        value: `${city.latitude} ${city.longitude}`,
+        label: `${city.name}, ${city.countryCode}`,
       }));
 
       return { options }; // Returning the options for the dropdown
