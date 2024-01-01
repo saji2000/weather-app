@@ -5,7 +5,7 @@
     color: #fff;
     background-color: #333;
     margin: 20px auto 0 auto;
-    padding: 0 20px 10px 20px;
+    padding: 0 20px 20px 20px;
 }
 
 .top, .bottom {
@@ -33,10 +33,10 @@
 }
 
 .temperature {
-    font-weight: 600;
-    font-size: 60px;
+    font-weight: 550;
+    font-size: 55px;
     width: auto;
-    letter-spacing: -5px;
+    letter-spacing: -1px;
     margin: 10px 0;
 }
 
