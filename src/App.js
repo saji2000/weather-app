@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import "./components/search/search";
 import Search from "./components/search/search";
+import Forecast from "./components/forecast/forecast";
 import CurrentWeather from "./components/current-weather/current-weather";
 import { WEATHER_API_KEY, WEATHER_API_URL } from "./api";
 function App() {
@@ -28,13 +29,23 @@ function App() {
       })
       .catch((err) => console.error(err));
   };
-  // console.log({ ...currentWeather });
-  // console.log({ ...forecastWeather });
+
+  useEffect(() => {
+    handleOnSearchChange({
+      value: "43.6703 -79.3867", // Coordinates for London
+      label: "Toronto, CA",
+    });
+  }, []);
 
   return (
     <div className="container">
       <Search onSearchChange={handleOnSearchChange} />
-      {currentWeather && <CurrentWeather data={currentWeather} />}
+      {currentWeather ? (
+        <CurrentWeather data={currentWeather} />
+      ) : (
+        <p>Loading</p>
+      )}
+      <Forecast />
     </div>
   );
 }

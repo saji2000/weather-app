@@ -47,4 +47,6 @@ const Search = ({ onSearchChange }) => {
   );
 };
 
+export const londonWeather = {};
+
 export default Search; // Exporting the Search component
