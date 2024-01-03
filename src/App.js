@@ -45,7 +45,7 @@ function App() {
       ) : (
         <p>Loading</p>
       )}
-      <Forecast />
+      {forecastWeather && <Forecast data={forecastWeather} />}
     </div>
   );
 }
