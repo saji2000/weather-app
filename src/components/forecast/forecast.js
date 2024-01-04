@@ -8,6 +8,8 @@ import {
 
 import CurrentWeather from "../current-weather/current-weather";
 
+import "./forecast.css";
+
 const WEEK_DAYS = [
   "Monday",
   "Tuesday",
